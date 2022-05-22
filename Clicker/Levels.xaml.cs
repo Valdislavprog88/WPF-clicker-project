@@ -32,7 +32,7 @@ namespace Clicker
                 level1.Topmost = true;
                 level1.Show();
                 this.Close();  
-            }else if(RBlevel2.IsChecked == true)
+            }else if(RBlevel2.IsChecked == true && RBlevel2.IsEnabled == true)
             {
                 Level2 level2 = new Level2();
                 level2.Topmost = true;
@@ -63,7 +63,15 @@ namespace Clicker
 
         private void level2Progress_Loaded(object sender, RoutedEventArgs e)
         {
-            level2Progress.Value = Money.balance;
+            if (Levelss.isLevel2Passed == false)
+            {
+                level2Progress.Value = Money.balance;
+            }
+            else
+            {
+                RBlevel2.IsEnabled = false;
+                level2Progress.Value = 400;
+            }
         }
 
         
@@ -92,12 +100,13 @@ namespace Clicker
 
         private void textLevel2Progress_Initialized(object sender, EventArgs e)
         {
-            if (Money.balance <= 400)
+            if (Money.balance < 400)
             {
                 textLevel2Progress.Text = Money.balance + "/400";
             }
             else
             {
+                RBlevel2.IsEnabled = false;
                 textLevel2Progress.Text = "пройдено!";
             }
         }

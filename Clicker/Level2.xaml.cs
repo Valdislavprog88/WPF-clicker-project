@@ -36,7 +36,7 @@ namespace Clicker
             balanceTB.Text = Money.balance.ToString();
         }
 
-        private int moneyToCompleteLevel { get; } = 600;
+        private int moneyToCompleteLevel { get; } = 400;
 
         private void clickerBtn_Click(object sender, RoutedEventArgs e)
         {

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d6b0e8ec-e1ac-451a-8b44-1999bf837b3c": {
+      "ProjectGuid": "d6b0e8ec-e1ac-451a-8b44-1999bf837b3c",
+      "DisplayName": "Clicker",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
