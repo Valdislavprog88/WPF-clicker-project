@@ -1,0 +1,17 @@
+﻿<Window x:Class="Clicker.ClickerLore"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Clicker"
+        mc:Ignorable="d"
+        Title="Лор Кликера" Height="402" Width="714" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock x:Name="lore" HorizontalAlignment="Center" Height="353" TextWrapping="Wrap" VerticalAlignment="Center" Width="396" FontFamily="Verdana" Cursor="Pen" TextAlignment="Left">
+        2050 год. В мире в который раз разразился экономический кризис, но в этот раз не из-за болтовни умных дядек в костюмах, а из-за их продукции. В 2047 году в государстве приняли закон о том, что отныне, срок службы компьютерной продукции без заводского брака или поломки, вызванной человеком должен быть минимум 3 года. Как ни странно, правительство стало активно контролировать выполнение обязательств на производстве, и компании начали терпеть огромные убытки. Из-за них, они были вынуждены развиваться в других направлениях. Назвали это старомодным словечком из далёкого 2022 “экосистема”(не та, что в биологии). <LineBreak></LineBreak>
+Со временем, всё стабилизировалось. Предприятия стали уходить в плюс другими средствами. Но технологический прогресс встал на месте: т.к бизнесы производили слишком долгоиграющую продукцию, у покупателей не было желания обновлять технику. Тогда, фирмы стали нанимать специальных сотрудников – ломателей продукции. В их обязанности входит находить товары своей компании после выдачи и ломать их. <LineBreak></LineBreak>Может и не совсем этично, но они вносят свой склад в прогресс. Ты играешь за одного из таких сотрудников.
+            Ну и ещё это игра-антистресс если вам так удобнее
+
+        </TextBlock>
+    </Grid>
+</Window>
