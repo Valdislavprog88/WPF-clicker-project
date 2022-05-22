@@ -37,7 +37,7 @@
         </Border>
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="409,180,0,0" TextWrapping="Wrap" Text="Просторы моря" VerticalAlignment="Top" Width="153" FontSize="20" FontFamily="Global User Interface" TextAlignment="Left" RenderTransformOrigin="0.468,0.707" FontStyle="Italic"/>
         <Label Content="377💰" HorizontalAlignment="Left" Height="30" Margin="409,204,0,0" VerticalAlignment="Top" Width="57" FontSize="18" FontFamily="Nachlieli CLM BoldOblique" Foreground="#FF3DB912"/>
-        <Button x:Name="SetSeaBack" Content="Поставить фон" HorizontalAlignment="Left" Height="30" Margin="403,239,0,0" VerticalAlignment="Top" Width="126" Background="{x:Null}" IsEnabled="False"/>
+        <Button x:Name="SetSeaBack" Content="Поставить фон" HorizontalAlignment="Left" Height="30" Margin="403,239,0,0" VerticalAlignment="Top" Width="126" Background="{x:Null}" IsEnabled="False" Click="SetSeaBack_Click"/>
         <CheckBox x:Name="SeaChB" Content="" HorizontalAlignment="Left" Height="16" Margin="471,211,0,0" VerticalAlignment="Top" Width="17" Cursor="Hand" FontSize="18" Checked="SeaChB_Checked" Unchecked="SeaChB_Unchecked"/>
         <!-- sea background end-->
 
@@ -48,7 +48,7 @@
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="597,180,0,0" TextWrapping="Wrap" Text="Вкус неба" VerticalAlignment="Top" Width="153" FontSize="20" FontFamily="Global User Interface" TextAlignment="Left" RenderTransformOrigin="0.468,0.707" FontStyle="Italic"/>
         <Label Content="444💰" HorizontalAlignment="Left" Height="30" Margin="597,204,0,0" VerticalAlignment="Top" Width="57" FontSize="18" FontFamily="Nachlieli CLM BoldOblique" Foreground="#FF3DB912"/>
         <CheckBox x:Name="SkyChB" Content="" HorizontalAlignment="Left" Height="16" Margin="659,211,0,0" VerticalAlignment="Top" Width="17" Cursor="Hand" FontSize="18" Checked="SkyChB_Checked" Unchecked="SkyChB_Unchecked" RenderTransformOrigin="0.961,0.565"/>
-        <Button x:Name="SetSkyBack" Content="Поставить фон" HorizontalAlignment="Left" Height="30" Margin="597,239,0,0" VerticalAlignment="Top" Width="126" Background="{x:Null}" IsEnabled="False"/>
+        <Button x:Name="SetSkyBack" Content="Поставить фон" HorizontalAlignment="Left" Height="30" Margin="597,239,0,0" VerticalAlignment="Top" Width="126" Background="{x:Null}" IsEnabled="False" Click="SetSkyBack_Click"/>
         <!-- sky background end-->
 
 

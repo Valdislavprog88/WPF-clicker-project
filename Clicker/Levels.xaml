@@ -22,7 +22,7 @@
             <TextBlock x:Name="textLevel2Progress" Height="31" TextWrapping="Wrap" Text="0/400" Width="92" FontSize="16" TextAlignment="Left" Initialized="textLevel2Progress_Initialized"/>
 
         </ListBox>
-        <Label x:Name="balanceLabel" Content="Баланс: " HorizontalAlignment="Left" Height="36" Margin="576,68,0,0" VerticalAlignment="Top" Width="139" FontSize="20" Initialized="balanceLabel_Initialized"/>
+        <Label x:Name="balanceLabel" Content="Баланс: " HorizontalAlignment="Left" Height="36" Margin="576,68,0,0" VerticalAlignment="Top" Width="214" FontSize="20" Initialized="balanceLabel_Initialized"/>
         <local:questionSignal HorizontalAlignment="Left" Height="28" Margin="57,68,0,0" VerticalAlignment="Top" Width="29" ToolTip="Чтобы выбрать серые уровни - надо пройти уровни перед ними"/>
         <Image HorizontalAlignment="Left" Height="37" Margin="21,20,0,0" VerticalAlignment="Top" Width="35"/>
         <Image x:Name="backToMenu" HorizontalAlignment="Left" Height="38" Margin="10,10,0,0" VerticalAlignment="Top" Width="39" Source="/Resources/img/left (1).png" Stretch="UniformToFill" MouseDown="backToMenu_MouseDown"/>

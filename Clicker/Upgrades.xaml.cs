@@ -255,8 +255,9 @@ namespace Clicker
                 BackGrounds.installedBG[i] = 0;
             }
             BackGrounds.installedBG[1] = 1;
+            Owner.Show();
+            this.Close();
 
-           
         }
 
         private void SetStandartBack_Click(object sender, RoutedEventArgs e)
@@ -268,6 +269,31 @@ namespace Clicker
             }
             BackGrounds.installedBG[0] = 1;
             Owner.Show();
+            this.Close();
+        }
+
+        private void SetSeaBack_Click(object sender, RoutedEventArgs e)
+        {
+            int[] instBG = BackGrounds.installedBG;
+            for (int i = 0; i < instBG.Length; i++)
+            {
+                BackGrounds.installedBG[i] = 0;
+            }
+            BackGrounds.installedBG[2] = 1;
+            Owner.Show();
+            this.Close();
+        }
+
+        private void SetSkyBack_Click(object sender, RoutedEventArgs e)
+        {
+            int[] instBG = BackGrounds.installedBG;
+            for (int i = 0; i < instBG.Length; i++)
+            {
+                BackGrounds.installedBG[i] = 0;
+            }
+            BackGrounds.installedBG[3] = 1;
+            Owner.Show();
+            this.Close();
         }
     }
 }

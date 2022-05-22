@@ -73,6 +73,7 @@ namespace Clicker
             upgrades.ShowDialog();
             updateBalanceClick();
             BGupdate();
+            
         }
 
         public void editLevelsBackground()
@@ -99,7 +100,8 @@ namespace Clicker
                     }
                     else if (i == 1)
                     {
-                        this.Background = new SolidColorBrush(Colors.Red);
+                        myBrush.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Resources/img/backgrounds/wood.jpg", UriKind.Absolute));
+                        this.Background = myBrush;
                     }
                     else if (i == 2)
                     {
@@ -108,7 +110,7 @@ namespace Clicker
                     }
                     else if (i == 3)
                     {
-                        myBrush.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Resources/img/backgrounds/sea.jpg", UriKind.Absolute));
+                        myBrush.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Resources/img/backgrounds/sky.jpg", UriKind.Absolute));
                         this.Background = myBrush;
                     }
                 }
