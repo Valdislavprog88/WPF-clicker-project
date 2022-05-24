@@ -7,10 +7,12 @@
         mc:Ignorable="d"
         Title="Level2" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid x:Name="level2Grid" Loaded="level2Grid_Loaded">
-        <Button x:Name="clickerBtn" Content="жмяк!" HorizontalAlignment="Left" Height="190" VerticalAlignment="Center" Width="200" Margin="278,115,0,115" FontSize="36" FontFamily="Stinger Slim Bold Italic" Click="clickerBtn_Click" BorderThickness="1,1,1,1" Panel.ZIndex="2" Background="#FF9C80F5"/>
-        <TextBlock x:Name="balanceTB" HorizontalAlignment="Left" Height="65" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="584" TextAlignment="Center" Loaded="balanceTB_Loaded" FontSize="48" FontFamily="Neue Machina Ultrabold" Margin="86,32,0,0" RenderTransformOrigin="0.51,0.924"/>
         <Image x:Name="backToMenu" HorizontalAlignment="Left" Height="38" Margin="10,10,0,0" VerticalAlignment="Top" Width="39" Source="Resources/img/left (1).png" Stretch="UniformToFill" MouseDown="backToMenu_MouseDown"/>
         <Button x:Name="upgradesBtn" Content="Улучшения" HorizontalAlignment="Left" Height="29" Margin="305,370,0,0" VerticalAlignment="Top" Width="146" Background="#FFFFF4DB" Foreground="#FF9C6000" Click="upgradesBtn_Click"/>
+        <Canvas x:Name="level2Canvas" HorizontalAlignment="Left" Height="334" Margin="49,10,0,0" VerticalAlignment="Top" Width="707">
+            <Button x:Name="clickerBtn" Content="жмяк!" Height="190" Width="200" FontSize="36" FontFamily="Stinger Slim Bold Italic" Click="clickerBtn_Click" BorderThickness="1,1,1,1" Panel.ZIndex="2" Background="#FF9C80F5" Canvas.Left="230" Canvas.Top="106"/>
+            <TextBlock x:Name="balanceTB" Height="90" TextWrapping="Wrap" Text="0" Width="584" TextAlignment="Center" Loaded="balanceTB_Loaded" FontSize="48" FontFamily="Neue Machina Ultrabold" RenderTransformOrigin="0.51,0.924" Canvas.Left="38" Canvas.Top="25"/>
+        </Canvas>
 
     </Grid>
 </Window>

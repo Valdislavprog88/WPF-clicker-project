@@ -9,8 +9,10 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+
 
 namespace Clicker
 {
@@ -40,7 +42,26 @@ namespace Clicker
 
         private void clickerBtn_Click(object sender, RoutedEventArgs e)
         {
-            if(Convert.ToInt32(balanceTB.Text) >= moneyToCompleteLevel)
+            // balanceTB level1 animation begin
+            ColorAnimation colorAnimation = new ColorAnimation();
+            colorAnimation.From = Colors.Black;
+            colorAnimation.To = Colors.OrangeRed;
+            colorAnimation.Duration = TimeSpan.FromSeconds(0.3);
+            PowerEase powerEase = new PowerEase();
+            powerEase.Power = 1.5;
+            powerEase.EasingMode = EasingMode.EaseInOut;
+            colorAnimation.EasingFunction = powerEase;
+            balanceTB.Foreground = new SolidColorBrush();
+            balanceTB.Foreground.BeginAnimation(SolidColorBrush.ColorProperty, colorAnimation);
+
+            if(Convert.ToInt32(balanceTB.Text) % 10 == 0)
+            {
+                balanceTB.FontSize+=0.4;
+            }
+            // balanceTB level1 animation end
+
+            
+            if (Convert.ToInt32(balanceTB.Text) >= moneyToCompleteLevel)
             {
                 warningPatternWindow levelComplete = new warningPatternWindow();
                 Levelss.isLevel1Passed = true;

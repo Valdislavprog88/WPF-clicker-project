@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 namespace Clicker
 {
@@ -40,7 +41,25 @@ namespace Clicker
 
         private void clickerBtn_Click(object sender, RoutedEventArgs e)
         {
-            if(Convert.ToInt32(balanceTB.Text) >= moneyToCompleteLevel)
+            // balanceTB level2 animation begin
+            ColorAnimation colorAnimation = new ColorAnimation();
+            colorAnimation.From = Colors.Black;
+            colorAnimation.To = Colors.LimeGreen;
+            colorAnimation.Duration = TimeSpan.FromSeconds(0.18);
+            PowerEase powerEase = new PowerEase();
+            powerEase.Power = 2;
+            powerEase.EasingMode = EasingMode.EaseInOut;
+            colorAnimation.EasingFunction = powerEase;
+            balanceTB.Foreground = new SolidColorBrush();
+            balanceTB.Foreground.BeginAnimation(SolidColorBrush.ColorProperty, colorAnimation);
+
+            if (Convert.ToInt32(balanceTB.Text) % 10 == 0)
+            {
+                balanceTB.FontSize += 0.5;
+            }
+            // balanceTB level2 animation end
+
+            if (Convert.ToInt32(balanceTB.Text) >= moneyToCompleteLevel)
             {
                 warningPatternWindow levelComplete = new warningPatternWindow();
                 Levelss.isLevel2Passed = true;
@@ -76,15 +95,12 @@ namespace Clicker
             upgrades.Close();
         }
 
-        public void editLevelsBackground()
-        {
-
-        }
+        
 
         public void BGupdate()
         {
             ImageBrush myBrush = new ImageBrush();
-            // levelGrid.Background = new ImageBrush(new BitmapImage(new Uri("Resouces/img/backgrounds/wood.jpg", UriKind.Relative)));
+            
             for (int i = 0; i < 4; i++)
             {
                 int[] instBG = BackGrounds.installedBG;
