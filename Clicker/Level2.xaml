@@ -5,14 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Clicker"
         mc:Ignorable="d"
-        Title="Level2" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Level2" Height="472" Width="840" WindowStartupLocation="CenterScreen">
     <Grid x:Name="level2Grid" Loaded="level2Grid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="349*"/>
+            <RowDefinition Height="107*"/>
+        </Grid.RowDefinitions>
         <Image x:Name="backToMenu" HorizontalAlignment="Left" Height="38" Margin="10,10,0,0" VerticalAlignment="Top" Width="39" Source="Resources/img/left (1).png" Stretch="UniformToFill" MouseDown="backToMenu_MouseDown"/>
-        <Button x:Name="upgradesBtn" Content="Улучшения" HorizontalAlignment="Left" Height="29" Margin="305,370,0,0" VerticalAlignment="Top" Width="146" Background="#FFFFF4DB" Foreground="#FF9C6000" Click="upgradesBtn_Click"/>
-        <Canvas x:Name="level2Canvas" HorizontalAlignment="Left" Height="334" Margin="49,10,0,0" VerticalAlignment="Top" Width="707">
-            <Button x:Name="clickerBtn" Content="жмяк!" Height="190" Width="200" FontSize="36" FontFamily="Stinger Slim Bold Italic" Click="clickerBtn_Click" BorderThickness="1,1,1,1" Panel.ZIndex="2" Background="#FF9C80F5" Canvas.Left="230" Canvas.Top="106"/>
-            <TextBlock x:Name="balanceTB" Height="90" TextWrapping="Wrap" Text="0" Width="584" TextAlignment="Center" Loaded="balanceTB_Loaded" FontSize="48" FontFamily="Neue Machina Ultrabold" RenderTransformOrigin="0.51,0.924" Canvas.Left="38" Canvas.Top="25"/>
-        </Canvas>
+        <Button x:Name="upgradesBtn" Content="Улучшения" Margin="347,0,347,57" Background="#FFFFF4DB" Foreground="#FF9C6000" Click="upgradesBtn_Click" Grid.Row="1" Height="29" VerticalAlignment="Bottom"/>
+
+        <Button x:Name="clickerBtn" Content="жмяк!" Height="190" Width="200" FontSize="36" FontFamily="Stinger Slim Bold Italic" Click="clickerBtn_Click" BorderThickness="1,1,1,1" Panel.ZIndex="2" Background="#FF9C80F5" Margin="320,133,320,26"/>
+        <TextBlock x:Name="balanceTB" Height="90" TextWrapping="Wrap" Text="0" Width="584" TextAlignment="Center" Loaded="balanceTB_Loaded" FontSize="48" FontFamily="Neue Machina Ultrabold" RenderTransformOrigin="0.51,0.924" Margin="128,29,128,230"/>
+
 
     </Grid>
 </Window>

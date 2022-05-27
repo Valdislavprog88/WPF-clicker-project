@@ -14,8 +14,8 @@ namespace Clicker
     /// </summary>
     public class Money
     {
-        public static int balance { get; set; } = 0;
-        public static int increase_ratio { get; set; } = 10;
+        public static int Balance { get; set; } = 0;
+        public static int Increase_ratio { get; set; } = 10;
         
         //public static string Surname { get; set; }
     }

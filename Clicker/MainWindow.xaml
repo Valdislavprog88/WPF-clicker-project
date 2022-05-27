@@ -1,4 +1,4 @@
-﻿<Window x:Class="Clicker.MainWindow"
+﻿<Window x:Name="window" x:Class="Clicker.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,16 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="Кликер" HorizontalAlignment="Center" Height="92" Margin="0,91,0,0" VerticalAlignment="Top" Width="248" FontSize="72" FontFamily="Roboto Medium"/>
+        <Label Content="Кликер" Margin="0,91,0,0" FontSize="72" FontFamily="Roboto Medium" HorizontalAlignment="Center" Width="248" Height="92" VerticalAlignment="Top"/>
         <Label Content="Сломай свою мышку" HorizontalAlignment="Center" Margin="0,183,0,0" VerticalAlignment="Top" Width="229" FontSize="22" FontFamily="Oswald Light"/>
-        <Button x:Name="startGameBtn" Content="Начать" HorizontalAlignment="Center" Height="83" Margin="0,253,0,0" VerticalAlignment="Top" Width="229" FontFamily="Roboto Medium" FontSize="24" Click="startGameBtn_Click"/>
-        <Menu x:Name="myMenu" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" Width="800">
+        <Button x:Name="startGameBtn" Content="Начать" Margin="278,253,278,94" FontFamily="Roboto Medium" FontSize="24" Click="startGameBtn_Click"/>
+        <Menu x:Name="myMenu" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="{Binding ActualWidth, ElementName=window, Mode=OneWay}">
             <MenuItem Header="Программа" Height="33">
                 <MenuItem Header="Закрыть игру :(" Click="MenuItem_Click" InputGestureText="ALT+F4"/>
             </MenuItem>
             <MenuItem Header="Справка" Height="34">
                 <MenuItem x:Name="aboutGameBtn" Header="Об игре &quot;Кликер&quot;" Click="aboutGameBtn_Click"/>
-                <MenuItem x:Name="loreBtn" Header="Лор кликера" Click="loreBtn_Click"/>
+                <!--<MenuItem x:Name="loreBtn" Header="Лор кликера" Click="loreBtn_Click"/>-->
             </MenuItem>
         </Menu>
 

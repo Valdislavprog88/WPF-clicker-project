@@ -164,7 +164,7 @@ namespace Clicker
         private void sumEdit()
         {
             sumLabel.Content = sum.ToString() + " 💰";
-            if(sum > Money.balance)
+            if(sum > Money.Balance)
             {
                 sumLabel.Foreground = new SolidColorBrush(Colors.Red);
                 buyBtn.IsEnabled = false;
@@ -217,7 +217,7 @@ namespace Clicker
         {
             if(sum > 0)
             {
-                Money.balance -= sum;
+                Money.Balance -= sum;
                 int[] BG = BackGrounds.BG;
                 for (int i = 0; i < 4; i++)
                 {
@@ -244,7 +244,7 @@ namespace Clicker
 
         private void balanceLabel_Initialized(object sender, EventArgs e)
         {
-            balanceLabel.Content = "Баланс: " + Money.balance + " 💰";
+            balanceLabel.Content = "Баланс: " + Money.Balance + " 💰";
         }
 
         private void SetWoodBack_Click(object sender, RoutedEventArgs e)

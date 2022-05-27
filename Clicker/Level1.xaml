@@ -5,14 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Clicker"
         mc:Ignorable="d"
-        Title="Level1" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Level1" Height="472" Width="840" WindowStartupLocation="CenterScreen">
     <Grid x:Name="levelGrid" Loaded="levelGrid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="359*"/>
+            <RowDefinition Height="75*"/>
+        </Grid.RowDefinitions>
         <Image x:Name="backToMenu" HorizontalAlignment="Left" Height="38" Margin="10,10,0,0" VerticalAlignment="Top" Width="39" Source="/Resources/img/left (1).png" Stretch="UniformToFill" MouseDown="backToMenu_MouseDown"/>
-        <Button x:Name="upgradesBtn" Content="Улучшения" HorizontalAlignment="Left" Height="29" Margin="305,370,0,0" VerticalAlignment="Top" Width="146" Background="#FFFFF4DB" Foreground="#FF9C6000" Click="upgradesBtn_Click"/>
-        <Canvas x:Name="level1Canvas" HorizontalAlignment="Center" Height="321" Margin="0,10,0,0" VerticalAlignment="Top" Width="694">
-            <Button x:Name="clickerBtn" Content="жмяк!" Height="190" Width="200" FontSize="36" FontFamily="Stinger Slim Bold Italic" Click="clickerBtn_Click" BorderThickness="1,1,1,1" Background="#FFF58080" Canvas.Left="225" Canvas.Top="105" FontStyle="Normal"/>
-            <TextBlock x:Name="balanceTB" Height="82" TextWrapping="Wrap" Text="0" Width="584" TextAlignment="Center" Loaded="balanceTB_Loaded" FontSize="48" FontFamily="Neue Machina Ultrabold" RenderTransformOrigin="0.51,0.924" Canvas.Left="33" Canvas.Top="23" Foreground="Black" FontStyle="Normal" FontWeight="Normal"/>
-        </Canvas>
+        <Button x:Name="upgradesBtn" Content="Улучшения" Margin="327,0,327,38" Background="#FFFFF4DB" Foreground="#FF9C6000" Click="upgradesBtn_Click" Height="29" VerticalAlignment="Bottom" Grid.Row="1"/>
+        <Button x:Name="clickerBtn" Content="жмяк!" Height="190" Width="200" FontSize="36" FontFamily="Stinger Slim Bold Italic" Click="clickerBtn_Click" BorderThickness="1,1,1,1" Background="#FFF58080" FontStyle="Normal" Margin="300,122,300,47"/>
+        <TextBlock x:Name="balanceTB" Height="82" TextWrapping="Wrap" Text="0" Width="584" TextAlignment="Center" Loaded="balanceTB_Loaded" FontSize="48" FontFamily="Neue Machina Ultrabold" RenderTransformOrigin="0.51,0.924" Foreground="Black" FontStyle="Normal" FontWeight="Normal" Margin="108,30,108,247"/>
+
 
     </Grid>
 </Window>

@@ -5,26 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Clicker"
         mc:Ignorable="d"
-        Title="Levels" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Levels" Height="450" Width="800" WindowStartupLocation="CenterScreen" MinWidth="734.5">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Height="54" Margin="91,59,0,0" TextWrapping="Wrap" Text="Уровни:" VerticalAlignment="Top" Width="182" FontSize="36" FontFamily="CocoBikeR"/>
-        <ListBox x:Name="LBlevels" Margin="57,136,568,136">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="17*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="66*"/>
+            <RowDefinition Height="195*"/>
+            <RowDefinition Height="124*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Margin="91,10,271,2" TextWrapping="Wrap" Text="Уровни:" FontSize="36" FontFamily="CocoBikeR" Grid.Row="1"/>
+        <ListBox x:Name="LBlevels" Margin="57,21,0,12" Grid.Row="2" HorizontalAlignment="Left" Width="175">
             <RadioButton x:Name="RBlevel1" Content="Уровень 1" GroupName="levels" FontSize="24" IsChecked="True"/>
             <RadioButton x:Name="RBlevel2" Content="Уровень 2" GroupName="levels" FontSize="24" IsEnabled="False"/>
         </ListBox>
-        <Button x:Name="enterLevelBtn" Content="Начать игру!" HorizontalAlignment="Left" Height="45" Margin="57,331,0,0" VerticalAlignment="Top" Width="216" Click="enterLevelBtn_Click"/>
-        <ListBox x:Name="LBlevels_progress" Margin="237,136,416,136">
-            <ProgressBar x:Name="level1Progress" Height="30" Width="114" Loaded="level1Progress_Loaded"/>
-            <ProgressBar x:Name="level2Progress" Height="30" Width="114" Maximum="400" Loaded="level2Progress_Loaded"/>
+        <Button x:Name="enterLevelBtn" Content="Начать игру!" Margin="57,0,0,58" Click="enterLevelBtn_Click" Grid.Row="3" HorizontalAlignment="Left" Width="216" Height="45" VerticalAlignment="Bottom"/>
+        <ListBox x:Name="LBlevels_progress" Margin="237,21,0,12" Grid.Row="2" HorizontalAlignment="Left" Width="147">
+            <ProgressBar x:Name="level1Progress" Height="30" Width="114" Loaded="level1Progress_Loaded" Orientation="Horizontal">
+                <ProgressBar.Foreground>
+                    <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                        <GradientStop Color="#FF0080BF" Offset="1"/>
+                        <GradientStop Color="LimeGreen" Offset="0"/>
+                    </LinearGradientBrush>
+                </ProgressBar.Foreground>
+            </ProgressBar>
+            <ProgressBar x:Name="level2Progress" Height="30" Width="114" Maximum="400" Loaded="level2Progress_Loaded">
+                <ProgressBar.Foreground>
+                    <LinearGradientBrush  EndPoint="1,0" StartPoint="0,0">
+                        <GradientStop Color="#FFFE5F75"/>
+                        <GradientStop Color="#FFFC9842" Offset="1"/>
+                    </LinearGradientBrush>
+                </ProgressBar.Foreground>
+            </ProgressBar>
         </ListBox>
-        <ListBox x:Name="LBlevels_text_progress" Margin="389,136,282,136">
+        <ListBox x:Name="LBlevels_text_progress" Margin="389,21,26,12" Grid.Row="2">
             <TextBlock x:Name="textLevel1Progress" Height="31" TextWrapping="Wrap" Text="0/100" Width="92" FontSize="16" Initialized="textLevel1Progress_Initialized"/>
             <TextBlock x:Name="textLevel2Progress" Height="31" TextWrapping="Wrap" Text="0/400" Width="92" FontSize="16" TextAlignment="Left" Initialized="textLevel2Progress_Initialized"/>
 
         </ListBox>
-        <Label x:Name="balanceLabel" Content="Баланс: " HorizontalAlignment="Left" Height="36" Margin="576,68,0,0" VerticalAlignment="Top" Width="214" FontSize="20" Initialized="balanceLabel_Initialized"/>
-        <local:questionSignal HorizontalAlignment="Left" Height="28" Margin="57,68,0,0" VerticalAlignment="Top" Width="29" ToolTip="Чтобы выбрать серые уровни - надо пройти уровни перед ними"/>
-        <Image HorizontalAlignment="Left" Height="37" Margin="21,20,0,0" VerticalAlignment="Top" Width="35"/>
+        <Label x:Name="balanceLabel" Content="Баланс: " HorizontalAlignment="Left" Height="36" Margin="32,19,0,0" VerticalAlignment="Top" Width="214" FontSize="20" Initialized="balanceLabel_Initialized" Grid.Column="1" Grid.Row="1" FontWeight="Bold"/>
+        <local:questionSignal HorizontalAlignment="Left" Margin="57,19,0,0" Width="29" ToolTip="Чтобы выбрать серые уровни - надо пройти уровни перед ними" Grid.Row="1" Height="28" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="37" Margin="21,20,0,0" VerticalAlignment="Top" Width="35" Grid.RowSpan="2"/>
         <Image x:Name="backToMenu" HorizontalAlignment="Left" Height="38" Margin="10,10,0,0" VerticalAlignment="Top" Width="39" Source="/Resources/img/left (1).png" Stretch="UniformToFill" MouseDown="backToMenu_MouseDown"/>
 
     </Grid>

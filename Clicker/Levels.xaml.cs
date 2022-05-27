@@ -45,14 +45,14 @@ namespace Clicker
 
         private void balanceLabel_Initialized(object sender, EventArgs e)
         {
-            balanceLabel.Content = "Баланс: " + Money.balance + " 💰";
+            balanceLabel.Content = "Баланс: " + Money.Balance + " 💰";
         }
 
         private void level1Progress_Loaded(object sender, RoutedEventArgs e)
         {
             if(Levelss.isLevel1Passed == false)
             {
-                level1Progress.Value = Money.balance;
+                level1Progress.Value = Money.Balance;
             }
             else
             {
@@ -65,7 +65,7 @@ namespace Clicker
         {
             if (Levelss.isLevel2Passed == false)
             {
-                level2Progress.Value = Money.balance;
+                level2Progress.Value = Money.Balance;
             }
             else
             {
@@ -87,7 +87,7 @@ namespace Clicker
         {
             if(Levelss.isLevel1Passed == false)
             {
-                textLevel1Progress.Text = Money.balance + "/100";
+                textLevel1Progress.Text = Money.Balance + "/100";
             }
             else
             {
@@ -100,9 +100,9 @@ namespace Clicker
 
         private void textLevel2Progress_Initialized(object sender, EventArgs e)
         {
-            if (Money.balance < 400)
+            if (Money.Balance < 400)
             {
-                textLevel2Progress.Text = Money.balance + "/400";
+                textLevel2Progress.Text = Money.Balance + "/400";
             }
             else
             {

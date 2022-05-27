@@ -34,7 +34,7 @@ namespace Clicker
 
         private void updateBalanceClick()
         {
-            balanceTB.Text = Money.balance.ToString();
+            balanceTB.Text = Money.Balance.ToString();
         }
 
         private int moneyToCompleteLevel { get; } = 400;
@@ -72,8 +72,8 @@ namespace Clicker
                 levels.Show();
                 this.Close();
             }
-            Money.balance += Money.increase_ratio;
-            balanceTB.Text = Money.balance.ToString();
+            Money.Balance += Money.Increase_ratio;
+            balanceTB.Text = Money.Balance.ToString();
         }
 
 
