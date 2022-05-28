@@ -70,7 +70,7 @@ namespace Clicker
             else
             {
                 RBlevel2.IsEnabled = false;
-                level2Progress.Value = 400;
+                level2Progress.Value = 450;
             }
         }
 
@@ -100,9 +100,9 @@ namespace Clicker
 
         private void textLevel2Progress_Initialized(object sender, EventArgs e)
         {
-            if (Money.Balance < 400)
+            if (Money.Balance < 450)
             {
-                textLevel2Progress.Text = Money.Balance + "/400";
+                textLevel2Progress.Text = Money.Balance + "/450";
             }
             else
             {

@@ -55,11 +55,13 @@ namespace Clicker
                     {
                         if(instBG[i] != 1)
                         {
-                            SetStandartBack.IsEnabled = true;
+                            changeIsEnabled(SetStandartBack, true);
+                            //SetStandartBack.IsEnabled = true;
                         }
                         else
                         {
-                            SetStandartBack.IsEnabled = false;
+                            changeIsEnabled(SetStandartBack, false);
+                            //SetStandartBack.IsEnabled = false;
                         }
                         
                     }
@@ -67,87 +69,81 @@ namespace Clicker
                     {
                         if (instBG[i] != 1)
                         {
-                            SetWoodBack.IsEnabled = true;
+                            changeIsEnabled(SetWoodBack, true);
+                            //SetWoodBack.IsEnabled = true;
                         }
                         else
                         {
-                            SetWoodBack.IsEnabled = false;
+                            changeIsEnabled(SetWoodBack, false);
+                            //SetWoodBack.IsEnabled = false;
                         }
                     }
                     else if (i == 2)
                     {
                         if (instBG[i] != 1)
                         {
-                            SetSeaBack.IsEnabled = true;
+                            changeIsEnabled(SetSeaBack, true);
+                            //SetSeaBack.IsEnabled = true;
                         }
                         else
                         {
-                            SetSeaBack.IsEnabled = false;
+                            changeIsEnabled(SetSeaBack, false);
+                            //SetSeaBack.IsEnabled = false;
                         }
                     }
                     else if (i == 3)
                     {
                         if (instBG[i] != 1)
                         {
-                            SetSkyBack.IsEnabled = true;
+                            changeIsEnabled(SetSkyBack, true);
+                            //SetSkyBack.IsEnabled = true;
                         }
                         else
                         {
-                            SetSkyBack.IsEnabled = false;
+                            changeIsEnabled(SetSkyBack, false);
+                            //SetSkyBack.IsEnabled = false;
                         }
                     }
 
                 }
             }
-            //int[] BG = BackGrounds.BG;
-            //int[] instBG = BackGrounds.installedBG;
-            //for (int i = 0; i < instBG.Length; i++)
-            //{
-
-            //    if (instBG[i] == 1)
-            //    {
-            //        if (i == 0)
-            //        {
-            //            SetStandartBack.IsEnabled = false;
-            //        }
-            //        else if (i == 1)
-            //        {
-            //            SetWoodBack.IsEnabled = false;
-            //        }
-            //        else if (i == 2)
-            //        {
-            //            SetSeaBack.IsEnabled = false;
-            //        }
-            //        else if (i == 3)
-            //        {
-            //            SetSkyBack.IsEnabled = false;
-            //        }
-
-            //    }
-                
-            //}
             
         }
+
+        public void changeIsEnabled(Button btn, bool value)
+        {
+            btn.IsEnabled = value;// changes Button(btn) isEnable field 
+        }
+
+        public void changeIsEnabled(CheckBox chB, bool value)
+        {
+            chB.IsEnabled = value;// changes CheckBox(chB) isEnable field 
+        }
+
+
 
         private void upgradeBought()
         {
             int[] BG = BackGrounds.BG;
-            //int[] instBG = BackGrounds.installedBG;
+            
             for (int i = 0; i < BG.Length; i++)
             {
                 if (BG[i] == 1)
                 {
                     if (i == 1)
                     {
-                        WoodChB.IsEnabled = false;
+                        changeIsEnabled(WoodChB, false);
+                        //WoodChB.IsEnabled = false;
                     }
                     else if (i == 2)
                     {
-                        SeaChB.IsEnabled = false;
+                        changeIsEnabled(SeaChB, false);
+                        //SeaChB.IsEnabled = false;
                     }
                     else if (i == 3)
                     {
-                        SkyChB.IsEnabled = false;
+                        changeIsEnabled(SkyChB, false);
+                        //SkyChB.IsEnabled = false;
                     }
 
                 }
@@ -156,9 +152,7 @@ namespace Clicker
 
         private void WoodChB_Checked(object sender, RoutedEventArgs e)
         {
-            sum += 88;
-            Sbought[1] = 1;
-            sumEdit();
+            PlusSumAndPurchases(88, 1);
         }
 
         private void sumEdit()
@@ -167,49 +161,58 @@ namespace Clicker
             if(sum > Money.Balance)
             {
                 sumLabel.Foreground = new SolidColorBrush(Colors.Red);
-                buyBtn.IsEnabled = false;
+                changeIsEnabled(buyBtn, false);
+                //buyBtn.IsEnabled = false;
             }
             else
             {
                 sumLabel.Foreground = new SolidColorBrush(Colors.Green);
-                buyBtn.IsEnabled = true;
+                changeIsEnabled(buyBtn, true);
+                //buyBtn.IsEnabled = true;
             }
         }
 
         private void SeaChB_Checked(object sender, RoutedEventArgs e)
         {
-            sum += 377;
-            Sbought[2] = 1;
-            sumEdit();
+            
+            PlusSumAndPurchases(377, 2);
         }
 
         private void SkyChB_Checked(object sender, RoutedEventArgs e)
         {
-            sum += 444;
-            Sbought[3] = 1;
-            sumEdit();
-
+            
+            PlusSumAndPurchases(444, 3);
         }
 
         private void WoodChB_Unchecked(object sender, RoutedEventArgs e)
         {
-            sum -= 88;
-            Sbought[1] = 0;
-            sumEdit();
-
+            
+            MinusSumAndPurchases(88, 1);
         }
 
         private void SeaChB_Unchecked(object sender, RoutedEventArgs e)
         {
-            sum -= 377;
-            Sbought[2] = 0;
-            sumEdit();
+            
+            MinusSumAndPurchases(377, 2);
         }
 
         private void SkyChB_Unchecked(object sender, RoutedEventArgs e)
         {
-            sum -= 444;
-            Sbought[3] = 0;
+            
+            MinusSumAndPurchases(444, 3);
+        }
+
+        private void MinusSumAndPurchases(int itemPrice, int indOfItem)
+        {
+            sum -= itemPrice;
+            Sbought[indOfItem] = 0; // removes the purchase
+            sumEdit();
+        }
+
+        private void PlusSumAndPurchases(int itemPrice, int indOfItem)
+        {
+            sum += itemPrice;
+            Sbought[indOfItem] = 1;// add the purchase
             sumEdit();
         }
 
@@ -229,14 +232,14 @@ namespace Clicker
                 upgradeBought();
                 setsUpgrade();
 
-                buyBtn.IsEnabled = false;
+                //buyBtn.IsEnabled = false;
+                changeIsEnabled(buyBtn, false);
                 warningPatternWindow warning = new warningPatternWindow();
                 warning.warning.Text = "Вы совершили покупку!";
                 warning.Show();
                 this.Close();
                 
-                //Levels levels = new Levels();
-                //levels.Show();
+                
             }
             
         }
@@ -249,51 +252,38 @@ namespace Clicker
 
         private void SetWoodBack_Click(object sender, RoutedEventArgs e)
         {
-            int[] instBG = BackGrounds.installedBG;
-            for (int i = 0; i < instBG.Length; i++)
-            {
-                BackGrounds.installedBG[i] = 0;
-            }
-            BackGrounds.installedBG[1] = 1;
-            Owner.Show();
-            this.Close();
-
+            SetBack(1);
         }
 
         private void SetStandartBack_Click(object sender, RoutedEventArgs e)
         {
-            int[] instBG = BackGrounds.installedBG;
-            for (int i = 0; i < instBG.Length; i++)
+            SetBack(0);
+        }
+
+        private void SetArrayElementsToZero(int[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
             {
-                BackGrounds.installedBG[i] = 0;
+                arr[i] = 0;
             }
-            BackGrounds.installedBG[0] = 1;
+        }
+        private void SetBack(int ind)
+        {
+            int instBGLen = BackGrounds.installedBG.Length;
+            SetArrayElementsToZero(BackGrounds.installedBG);
+            
+            BackGrounds.installedBG[ind] = 1;
             Owner.Show();
             this.Close();
         }
-
         private void SetSeaBack_Click(object sender, RoutedEventArgs e)
         {
-            int[] instBG = BackGrounds.installedBG;
-            for (int i = 0; i < instBG.Length; i++)
-            {
-                BackGrounds.installedBG[i] = 0;
-            }
-            BackGrounds.installedBG[2] = 1;
-            Owner.Show();
-            this.Close();
+            SetBack(2);
         }
 
         private void SetSkyBack_Click(object sender, RoutedEventArgs e)
         {
-            int[] instBG = BackGrounds.installedBG;
-            for (int i = 0; i < instBG.Length; i++)
-            {
-                BackGrounds.installedBG[i] = 0;
-            }
-            BackGrounds.installedBG[3] = 1;
-            Owner.Show();
-            this.Close();
+            SetBack(3);
         }
     }
 }

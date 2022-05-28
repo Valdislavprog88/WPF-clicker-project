@@ -14,15 +14,15 @@ namespace Clicker
     /// </summary>
     public class Money
     {
-        public static int Balance { get; set; } = 0;
-        public static int Increase_ratio { get; set; } = 10;
+        public static int Balance = 0;
+        public static int Increase_ratio = 1;
         
         //public static string Surname { get; set; }
     }
     public class Levelss
     {
-        public static bool isLevel1Passed { get; set; } = false;
-        public static bool isLevel2Passed { get; set; } = false;
+        public static bool isLevel1Passed = false;
+        public static bool isLevel2Passed = false;
     }
     public class BackGrounds
     {

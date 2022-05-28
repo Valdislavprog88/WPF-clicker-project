@@ -13,5 +13,6 @@
             Ну и ещё это игра-антистресс если вам так удобнее
 
         </TextBlock>
+        <TextBlock Margin="286,156,265,193" TextWrapping="Wrap" Text="Тут должен был быть лор"/>
     </Grid>
 </Window>

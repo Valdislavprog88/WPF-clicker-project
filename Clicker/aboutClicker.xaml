@@ -9,6 +9,18 @@
     <Grid>
         <Label Content="Игра &quot;Кликер&quot;" HorizontalAlignment="Left" Height="30" Margin="164,73,0,0" VerticalAlignment="Top" Width="186"/>
         <Label Content="Version: 0.0.1" HorizontalAlignment="Left" Height="30" Margin="164,108,0,0" VerticalAlignment="Top" Width="186"/>
+        <Label Content="GitHub:   Valdislavprog88/WPF-clicker-project" HorizontalAlignment="Left" Height="30" Margin="164,141,0,0" VerticalAlignment="Top" Width="252"/>
+        <Label Content="Кликер" Margin="-39,99,0,0" FontSize="72" FontFamily="Roboto Medium" HorizontalAlignment="Left" Width="243" Height="91" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="2022" HorizontalAlignment="Left" Height="30" Margin="164,176,0,0" VerticalAlignment="Top" Width="252" FontStyle="Italic" FontWeight="Bold"/>
 
 
 

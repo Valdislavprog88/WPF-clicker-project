@@ -97,10 +97,6 @@ namespace Clicker
             
         }
 
-        public void editLevelsBackground()
-        {
-
-        }
 
         private void levelGrid_Loaded(object sender, RoutedEventArgs e)
         {
