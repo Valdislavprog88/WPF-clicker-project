@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Clicker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="КЛИКЕР" Height="450" Width="800" WindowStartupLocation="CenterScreen" Icon="Resources/img/icon.ico">
     <Grid>
         <Label Content="Кликер" Margin="0,91,0,0" FontSize="72" FontFamily="Roboto Medium" HorizontalAlignment="Center" Width="248" Height="92" VerticalAlignment="Top"/>
         <Label Content="Сломай свою мышку" HorizontalAlignment="Center" Margin="0,183,0,0" VerticalAlignment="Top" Width="229" FontSize="22" FontFamily="Oswald Light"/>

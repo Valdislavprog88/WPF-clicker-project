@@ -39,41 +39,12 @@ namespace Clicker
 
         private int moneyToCompleteLevel { get; } = 450;
 
+        
         private void clickerBtn_Click(object sender, RoutedEventArgs e)
         {
-            // balanceTB level2 animation begin
-            ColorAnimation colorAnimation = new ColorAnimation();
-            colorAnimation.From = Colors.Black;
-            colorAnimation.To = Colors.LimeGreen;
-            colorAnimation.Duration = TimeSpan.FromSeconds(0.18);
-            PowerEase powerEase = new PowerEase();
-            powerEase.Power = 2;
-            powerEase.EasingMode = EasingMode.EaseInOut;
-            colorAnimation.EasingFunction = powerEase;
-            balanceTB.Foreground = new SolidColorBrush();
-            balanceTB.Foreground.BeginAnimation(SolidColorBrush.ColorProperty, colorAnimation);
+            lev2AnimationWithBalance();
+            lev2balancePlusPlus();
 
-            if (Convert.ToInt32(balanceTB.Text) % 10 == 0)
-            {
-                balanceTB.FontSize += 0.5;
-            }
-            // balanceTB level2 animation end
-
-            if (Convert.ToInt32(balanceTB.Text) >= moneyToCompleteLevel)
-            {
-                warningPatternWindow levelComplete = new warningPatternWindow();
-                Levelss.isLevel2Passed = true;
-                levelComplete.warning.Text = "Ура! Вы завершили уровень!";
-                levelComplete.ShowDialog();
-
-                
-
-                Levels levels = new Levels();
-                levels.Show();
-                this.Close();
-            }
-            Money.Balance += Money.Increase_ratio;
-            balanceTB.Text = Money.Balance.ToString();
         }
 
 
@@ -132,10 +103,55 @@ namespace Clicker
                 }
             }
         }
+        private void lev2AnimationWithBalance()
+        {
 
-            private void level2Grid_Loaded(object sender, RoutedEventArgs e)
+            // balanceTB level2 animation begin
+            ColorAnimation colorAnimation = new ColorAnimation();
+            colorAnimation.From = Colors.Black;
+            colorAnimation.To = Colors.LimeGreen;
+            colorAnimation.Duration = TimeSpan.FromSeconds(0.18);
+            PowerEase powerEase = new PowerEase();
+            powerEase.Power = 2;
+            powerEase.EasingMode = EasingMode.EaseInOut;
+            colorAnimation.EasingFunction = powerEase;
+            balanceTB.Foreground = new SolidColorBrush();
+            balanceTB.Foreground.BeginAnimation(SolidColorBrush.ColorProperty, colorAnimation);
+
+            if (Convert.ToInt32(balanceTB.Text) % 10 == 0)
+            {
+                balanceTB.FontSize += 0.5;
+            }
+            // balanceTB level2 animation end
+        }
+        private void lev2balancePlusPlus()
+        {
+            if (Convert.ToInt32(balanceTB.Text) >= moneyToCompleteLevel)
+            {
+                warningPatternWindow levelComplete = new warningPatternWindow();
+                Levelss.isLevel2Passed = true;
+                levelComplete.warning.Text = "Ура! Вы завершили уровень!";
+                levelComplete.ShowDialog();
+
+
+
+                Levels levels = new Levels();
+                levels.Show();
+                this.Close();
+            }
+            Money.Balance += Money.Increase_ratio;
+            balanceTB.Text = Money.Balance.ToString();
+        }
+        private void level2Grid_Loaded(object sender, RoutedEventArgs e)
             {
                 BGupdate();
             }
+        
+
+        private void level2Window_KeyUp(object sender, KeyEventArgs e)
+        {
+            lev2AnimationWithBalance();
+            lev2balancePlusPlus();
+        }
     }
 }

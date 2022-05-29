@@ -39,9 +39,36 @@ namespace Clicker
         }
 
         private int moneyToCompleteLevel { get; } = 100;
-        
+
+        private void balancePlusPlus()
+        {
+            animationWithBalance();
+
+            if (Convert.ToInt32(balanceTB.Text) >= moneyToCompleteLevel)
+            {
+                warningPatternWindow levelComplete = new warningPatternWindow();
+                Levelss.isLevel1Passed = true;
+                levelComplete.warning.Text = "Ура! Вы завершили уровень!";
+                levelComplete.ShowDialog();
+
+
+
+                Levels levels = new Levels();
+                levels.Show();
+                this.Close();
+            }
+            Money.Balance += Money.Increase_ratio;
+            balanceTB.Text = Money.Balance.ToString();
+        }
         private void clickerBtn_Click(object sender, RoutedEventArgs e)
         {
+            animationWithBalance();
+            balancePlusPlus();
+        }
+
+        private void animationWithBalance()
+        {
+
             // balanceTB level1 animation begin
             ColorAnimation colorAnimation = new ColorAnimation();
             colorAnimation.From = Colors.Black;
@@ -54,28 +81,11 @@ namespace Clicker
             balanceTB.Foreground = new SolidColorBrush();
             balanceTB.Foreground.BeginAnimation(SolidColorBrush.ColorProperty, colorAnimation);
 
-            if(Convert.ToInt32(balanceTB.Text) % 10 == 0)
+            if (Convert.ToInt32(balanceTB.Text) % 10 == 0)
             {
-                balanceTB.FontSize+=0.4;
+                balanceTB.FontSize += 0.4;
             }
             // balanceTB level1 animation end
-
-            
-            if (Convert.ToInt32(balanceTB.Text) >= moneyToCompleteLevel)
-            {
-                warningPatternWindow levelComplete = new warningPatternWindow();
-                Levelss.isLevel1Passed = true;
-                levelComplete.warning.Text = "Ура! Вы завершили уровень!";
-                levelComplete.ShowDialog();
-
-                
-
-                Levels levels = new Levels();
-                levels.Show();
-                this.Close();
-            }
-            Money.Balance += Money.Increase_ratio;
-            balanceTB.Text = Money.Balance.ToString();
         }
 
 
@@ -133,7 +143,10 @@ namespace Clicker
                 }
             }
         }
-
-        
+        private void window1_KeyUp(object sender, KeyEventArgs e)
+        {
+            animationWithBalance();
+            balancePlusPlus();
+        }
     }
 }

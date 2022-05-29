@@ -285,5 +285,45 @@ namespace Clicker
         {
             SetBack(3);
         }
+
+        private void upgradesGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            byte r = Convert.ToByte(BackGrounds.randomBGRed);
+            byte g = Convert.ToByte(BackGrounds.randomBGGreen);
+            byte b = Convert.ToByte(BackGrounds.randomBGBlue);
+            this.Background = new SolidColorBrush(Color.FromRgb(r, g, b));
+        }
+
+        private void setBG()
+        {
+            byte r = Convert.ToByte(BackGrounds.randomBGRed);
+            byte g = Convert.ToByte(BackGrounds.randomBGGreen);
+            byte b = Convert.ToByte(BackGrounds.randomBGBlue);
+            this.Background = new SolidColorBrush(Color.FromRgb(r, g, b));
+        }
+
+        private void setRandomBG_Click(object sender, RoutedEventArgs e)
+        {
+            if(setRandomBG.Content.ToString() == "случайный цвет фона магазина улучшений")
+            {
+                Random random = new Random();
+                BackGrounds.randomBGRed = random.Next(0, 255);
+                BackGrounds.randomBGGreen = random.Next(0, 255);
+                BackGrounds.randomBGBlue = random.Next(0, 255);
+                setBG();
+                setRandomBG.Content = "вернуть белый фон магазина";
+            }
+            else
+            {
+                setRandomBG.Content = "случайный цвет фона магазина улучшений";
+                BackGrounds.randomBGRed = 255;
+                BackGrounds.randomBGGreen = 255;
+                BackGrounds.randomBGBlue = 255;
+
+                this.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+            }
+           
+
+        }
     }
 }

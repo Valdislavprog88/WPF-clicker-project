@@ -28,6 +28,9 @@ namespace Clicker
     {
         public static int[] BG = new int[4] {1, 0, 0, 0};
         public static int[] installedBG = new int[4] { 1, 0, 0, 0 };
+        public static int randomBGRed = 255;
+        public static int randomBGGreen= 255;
+        public static int randomBGBlue = 255;
     }
     public partial class App : Application
     {

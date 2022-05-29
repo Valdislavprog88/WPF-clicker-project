@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:Clicker"
         mc:Ignorable="d"
         Title="Улучшения" Height="438" Width="780" WindowStartupLocation="CenterScreen" Loaded="upgradesWindow_Loaded" ResizeMode="CanMinimize">
-    <Grid>
+    <Grid x:Name="upgradesGrid" Loaded="upgradesGrid_Loaded">
         <TextBlock HorizontalAlignment="Left" Height="42" Margin="73,20,0,0" TextWrapping="Wrap" Text="Улучшения: " VerticalAlignment="Top" Width="219" FontSize="36" FontFamily="CocoBikeR"/>
-        <TextBlock HorizontalAlignment="Left" Height="34" Margin="340,27,0,0" TextWrapping="Wrap" Text="Фоны:" VerticalAlignment="Top" Width="126" FontSize="24" FontFamily="Global User Interface" TextAlignment="Center" RenderTransformOrigin="0.468,0.707"/>
+        <TextBlock HorizontalAlignment="Left" Height="34" Margin="340,27,0,0" TextWrapping="Wrap" Text="Фоны:" VerticalAlignment="Top" Width="126" FontSize="24" FontFamily="Global User Interface" TextAlignment="Center" RenderTransformOrigin="0.468,0.707" />
 
         <!-- standart background start-->
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="86" Margin="30,89,0,0" VerticalAlignment="Top" Width="153">
@@ -52,11 +52,12 @@
         <!-- sky background end-->
 
 
-        <TextBlock HorizontalAlignment="Left" Height="27" Margin="36,286,0,0" TextWrapping="Wrap" Text="Итого:" VerticalAlignment="Top" Width="84" FontSize="24" FontFamily="CocoBikeR"/>
+        <TextBlock HorizontalAlignment="Left" Height="27" Margin="36,286,0,0" TextWrapping="Wrap" Text="Итого:" VerticalAlignment="Top" Width="84" FontSize="24" FontFamily="CocoBikeR" TextDecorations="Underline"/>
         <Label x:Name="sumLabel" Content="0💰" HorizontalAlignment="Left" Height="30" Margin="36,323,0,0" VerticalAlignment="Top" Width="98" FontSize="18" FontFamily="Nachlieli CLM BoldOblique" Foreground="#FF3DB912"/>
         <Button x:Name="buyBtn" Content="Купить!" HorizontalAlignment="Left" Height="38" Margin="30,358,0,0" VerticalAlignment="Top" Width="116" Background="#FFFBB063" Foreground="Black" FontWeight="Bold" Click="buyBtn_Click"/>
         <Image x:Name="backToMenu" HorizontalAlignment="Left" Height="38" Margin="10,10,0,0" VerticalAlignment="Top" Width="39" Source="/Resources/img/left (1).png" Stretch="UniformToFill" MouseDown="backToMenu_MouseDown"/>
         <Label x:Name="balanceLabel" Content="Баланс: " HorizontalAlignment="Left" Height="36" Margin="590,17,0,0" VerticalAlignment="Top" Width="140" FontSize="20" Initialized="balanceLabel_Initialized" Foreground="#FFE8841E" FontWeight="SemiBold"/>
+        <Button x:Name="setRandomBG" Content="случайный цвет фона магазина улучшений" HorizontalAlignment="Left" Height="30" Margin="506,362,0,0" VerticalAlignment="Top" Width="244" Background="{x:Null}" RenderTransformOrigin="0.485,2.233" Click="setRandomBG_Click"/>
 
 
 

@@ -20,7 +20,8 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label Content="2022" HorizontalAlignment="Left" Height="30" Margin="164,176,0,0" VerticalAlignment="Top" Width="252" FontStyle="Italic" FontWeight="Bold"/>
+        <Label Content="2022" HorizontalAlignment="Left" Height="30" Margin="164,217,0,0" VerticalAlignment="Top" Width="252" FontStyle="Italic" FontWeight="Bold"/>
+        <Label Content="автор ПО НЕ ОТВЕЧАЕТ за любые поломки&#xD;&#xA;во время игры(сори за капс)" HorizontalAlignment="Left" Height="41" Margin="164,171,0,0" VerticalAlignment="Top" Width="252"/>
 
 
 
