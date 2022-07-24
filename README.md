@@ -9,6 +9,7 @@ You just have to copy the repository and run the file ```Clicker.exe``` at ```Cl
 in _CMD:_
 
 ```
-$ cd Clicker/bin/Debug
+$ git clone https://github.com/Valdislavprog88/WPF-clicker-project
+$ cd WPF-clicker-project/Clicker/bin/Debug/
 $ start Clicker.exe
 ```
